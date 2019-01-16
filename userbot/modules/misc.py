@@ -135,12 +135,23 @@ async def randomise(e):
         await e.edit("**Query: **\n`" + e.text + "`\n**Output: **\n`" + r[index] + "`")
 
 
-@bot.on(events.NewMessage(outgoing=True, pattern="^.alive$"))
+@bot.on(events.NewMessage(outgoing=True, pattern="^.fp$"))
+@bot.on(events.MessageEdited(outgoing=True, pattern="^.fp$"))
+async def facepalm(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("🤷‍♂")
+
+@bot.on(events.NewMessage(outgoing=True, pattern="^.cry$"))
+@bot.on(events.MessageEdited(outgoing=True, pattern="^.cry$"))
+async def cry(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("(;´༎ຶД༎ຶ)")
+
+@bot.on(events.NewMessage(outgoing=True, pattern="^.alive$"))                                         
 @bot.on(events.MessageEdited(outgoing=True, pattern="^.alive$"))
 async def amialive(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("`Master! I am alive😁`")
-
+        await e.edit("`Sar, I'm alive :D`")
 
 @bot.on(events.NewMessage(outgoing=True, pattern="^.chatid$"))
 @bot.on(events.MessageEdited(outgoing=True, pattern="^.chatid$"))
