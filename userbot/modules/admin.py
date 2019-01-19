@@ -24,12 +24,12 @@ async def wizzard(e):
             pin_messages=True,
             invite_link=True,
         )
-        await e.edit("`Wizard waves his wand!`")
+        await e.edit("`Wait Plox :}`")
         time.sleep(3)
         await bot(
             EditAdminRequest(e.chat_id, (await e.get_reply_message()).sender_id, rights)
         )
-        await e.edit("A perfect magic has happened!")
+        await e.edit("Successfully Promoted!")
 
 
 @bot.on(events.NewMessage(outgoing=True, pattern="^.ban$"))
@@ -50,7 +50,7 @@ async def thanos(e):
         if (await e.get_reply_message()).sender_id in BRAIN_CHECKER:
             await e.edit("`Ban Error! Couldn't ban this user`")
             return
-        await e.edit("`Thanos snaps!`")
+        await e.edit("`Succesfully Banned :O`")
         time.sleep(5)
         try:
             await bot(
@@ -88,7 +88,7 @@ async def spider(e):
             await e.edit("`Running on Non-SQL mode!`")
             return
         mute(e.chat_id, str((await e.get_reply_message()).sender_id))
-        await e.edit("`Spiderman nabs him!`")
+        await e.edit("`Succesfully Muted!`")
         time.sleep(5)
         await e.delete()
         await bot.send_file(
@@ -181,7 +181,7 @@ async def spider(e):
             await e.edit("`Running on Non-SQL mode!`")
             return
         gmute(str((await e.get_reply_message()).sender_id))
-        await e.edit("`Spiderman nabs him!`")
+        await e.edit("`Succesfully Gmuted Wew`")
         time.sleep(5)
         await e.delete()
         await bot.send_file(
