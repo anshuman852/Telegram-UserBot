@@ -65,8 +65,8 @@ async def thanos(e):
                 )
                 return
         await e.delete()
-        await bot.send_file(
-            e.chat_id, "https://media.giphy.com/media/xUOxfgwY8Tvj1DY5y0/source.gif"
+        await bot.send_message(
+            e.chat_id, "`Succefully Banned :0`"
         )
         if LOGGER:
             await bot.send_message(
@@ -91,8 +91,8 @@ async def spider(e):
         await e.edit("`Succesfully Muted!`")
         time.sleep(5)
         await e.delete()
-        await bot.send_file(
-            e.chat_id, "https://image.ibb.co/mNtVa9/ezgif_2_49b4f89285.gif"
+        await bot.send_message(
+            e.chat_id, "`Successfully Muted :)`"
         )
         if LOGGER:
             await bot.send_message(
