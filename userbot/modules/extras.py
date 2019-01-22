@@ -74,7 +74,7 @@ async def blocks(e):
 async def leave(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         if '-' in str(e.chat_id):
-            await client(LeaveChannelRequest(e.chat_id))
+            await bot(LeaveChannelRequest(e.chat_id))
         else:
             await e.edit('`Sar This is Not A Chat`')
 
